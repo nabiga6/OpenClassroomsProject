@@ -1,0 +1,33 @@
+#Ceci est unworflow basic pour débuter avec github actions
+name: CI
+
+# Controlera l'action lorsqu'il sera lancé. Declenchera le workflow avec une action pull ou pull request
+# seulement sur la branche main ou master
+on:
+  push:
+    branches: [main]
+  pull request: 
+    branches: [main]
+# Une exécution de workflow est composée d'une ou plusieurs 
+#tâches pouvant être exécutées séquentiellement ou en parallèle.
+jobs:
+  # Ce workflow contient un simple job appélé Build
+  build:
+    # Le type de runner dans lequel build doit etre lancé.
+    runs-on: ubuntu-latest
+  # Les étapes représentent une séquence de tâches à exécuter dans le cadre du job
+    steps:
+    # Vérifie votre dépôt sous $GITHUB_WORKSPACE afin que votre tâche puisse y accéder..
+    - uses: actions/checkout@v2
+
+    # Lancer un un seul commande en utilisant le shell runners
+    - name: Run one-line script
+      run: echo Hello the world !
+
+   # Lancer un ensemble de commandes en utilisant le shell runners
+    - name: Run a multi-line script
+      run: |
+        echo Add another actions pour construire,
+        echo test, et déploie ton projet.
+   
+
