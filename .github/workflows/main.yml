@@ -6,7 +6,7 @@ name: CI
 on:
   push:
     branches: [main]
-  pull request: 
+  pull_request: 
     branches: [main]
 # Une exécution de workflow est composée d'une ou plusieurs 
 #tâches pouvant être exécutées séquentiellement ou en parallèle.
