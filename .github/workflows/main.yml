@@ -4,6 +4,7 @@ name: CI
 # Controlera l'action lorsqu'il sera lancé. Declenchera le workflow avec une action pull ou pull request
 # seulement sur la branche main ou master
 on:
+  worflow_dispatch
   push:
     branches: [main]
   pull_request: 
